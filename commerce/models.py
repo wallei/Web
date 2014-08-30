@@ -29,6 +29,8 @@ class producto(models.Model):
     marca = models.CharField(max_length=100)
     stock = models.IntegerField(blank=False)
     genero = models.CharField(max_length=10, choices=genero_choices,default='M')
+    precio = models.DecimalField(max_digits=9, decimal_places = 2)
+    activo = models.BooleanField(default=False)
     descripcion = models.TextField()
     def __unicode__(self):
         return self.nombre_producto
