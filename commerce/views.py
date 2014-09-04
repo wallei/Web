@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from commerce.models import producto, subcategoria, categoria
+from django.shortcuts import render_to_response
 
-# Create your views here.
+def lista_producto(request):
+	productos = producto.objects.all()
+	return render_to_response('lista_producto.html',{'lista':productos})
