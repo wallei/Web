@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+	<title>Lista de Productos</title>
+	<meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Lista de Productos</h1>
+	{% for elemento in lista %}
+	<ul>
+	  <li><strong>{{elemento.nombre_producto}}</strong></li>
+	  <li>{{elemento.codigo}}</li>
+	  <li>{{elemento.subcategoria}}</li>
+      <li>{{elemento.marca}}</strong></li>
+	  <li>{{elemento.stock}}</li>
+	  <li>{{elemento.genero}}</li>
+      <li>{{elemento.precio}}</strong></li>
+	  <li>{{elemento.activo}}</li>
+	  <li>{{elemento.descripcion}}</li>
+	</ul>
+	{% endfor %}
+  </body>
+</html>
