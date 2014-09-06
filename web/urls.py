@@ -1,6 +1,4 @@
 from django.conf.urls import patterns, include, url
-from django.contrib.auth.views import login
-from django.contrib.auth.views import login, logout
 from django.conf import settings
 
 from django.contrib import admin
