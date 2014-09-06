@@ -6,7 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^home$', 'loginusuario.views.home', name='home'),
     url(r'^media/(?P<path>.*)$','django.views.static.serve',
 		{'media_root':settings.MEDIA_ROOT,}
 	),

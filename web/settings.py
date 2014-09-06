@@ -51,6 +51,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'web.urls'
 
 WSGI_APPLICATION = 'web.wsgi.application'
+MEDIA_ROOT = os.path.join(BASE_DIR,'commerce/carga')
+#MEDIA_URL = 'media/'
 
 
 # Database
@@ -61,6 +63,9 @@ TEMPLATE_DIRS = (
     #'C:\proyectos\grupo\Plantilla'#NOTA PARA FUTUROS PROYECTOS
     )
 
+
+#LOGIN_REDIRECT_URL = "/home"
+#LOGIN_URL = '/'
 
 DATABASES = {
     'default': {
