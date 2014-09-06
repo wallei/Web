@@ -1,5 +1,7 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
+from thumbs import ImageWithThumbsField
 
 
 
@@ -32,5 +34,6 @@ class producto(models.Model):
     precio = models.DecimalField(max_digits=9, decimal_places = 2)
     activo = models.BooleanField(default=False)
     descripcion = models.TextField()
+    imagen = ImageWithThumbsField(upload_to='foto_producto', sizes=((200,200),(125,125)))
     def __unicode__(self):
         return self.nombre_producto
