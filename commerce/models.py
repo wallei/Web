@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 #from django.contrib.auth.models import User
-from thumbs import ImageWithThumbsField
+from thumbs import ImageWithThumbsField #Importo para redimensionar las imagenes
 
 
 
@@ -16,7 +16,7 @@ class categoria(models.Model):
 class subcategoria(models.Model):
     id_sc = models.AutoField(primary_key=True)
     nombre_sc = models.CharField(max_length=100)
-    categoria =models.ForeignKey('categoria', related_name='C')#models.ManyToManyField(categoria)
+    categoria =models.ForeignKey('categoria', related_name='C')
     def __unicode__(self):
         return self.nombre_sc
 
@@ -34,6 +34,6 @@ class producto(models.Model):
     precio = models.DecimalField(max_digits=9, decimal_places = 2)
     activo = models.BooleanField(default=False)
     descripcion = models.TextField()
-    imagen = ImageWithThumbsField(upload_to='foto_producto', sizes=((200,200),(125,125)))
+    imagen = ImageWithThumbsField(upload_to='foto_producto', sizes=((200,200),(125,125)))#Carga la imagen, guarda la original mas las dos redimensionadas
     def __unicode__(self):
         return self.nombre_producto
