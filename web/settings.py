@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'web.urls'
 
 WSGI_APPLICATION = 'web.wsgi.application'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/commerce/carga/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'commerce/carga/')
 MEDIA_URL = '/media/'
 
 
