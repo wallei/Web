@@ -1,8 +1,9 @@
 from django.contrib import admin
+from sorl.thumbnail.admin import AdminImageMixin
 from commerce.models import *
 
 
-class ProductoAdmin(admin.ModelAdmin):
+class ProductoAdmin(AdminImageMixin, admin.ModelAdmin):
 
     list_display = ('codigo','nombre_producto','precio','marca','genero','stock','activo')
     list_display_links = ('nombre_producto',)

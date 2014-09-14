@@ -5,20 +5,29 @@
 	<meta charset='utf-8'>
   </head>
   <body>
-    <h1>Lista de Productos</h1>
+    <h1 align="center">Lista de Productos</h1>
+	<br>
+	<br>
+	<br>
 	{% for elemento in lista %}
 	<ul>
-	  <li><strong>{{elemento.nombre_producto}}</strong></li>
-	  <li>{{elemento.codigo}}</li>
-	  <li>{{elemento.subcategoria}}</li>
-      <li>{{elemento.marca}}</strong></li>
-	  <li>{{elemento.stock}}</li>
-	  <li>{{elemento.genero}}</li>
-      <li>{{elemento.precio}}</strong></li>
-	  <li>{{elemento.activo}}</li>
-	  <li>{{elemento.descripcion}}</li>
-	  <li><img src='{{MEDIA_URL}}{{elemento.imagen}}'></li>
+	  <div border: 1px solid black>
+	  <H2><strong>{{elemento.nombre_producto}}</strong></H2>
+	  <h3>Categoria:  {{elemento.subcategoria}}</h3>
+		{% load thumbnail %}
+		{% thumbnail elemento.imagen "200" crop="200px 200px" format="PNG" as im%}
+			<img src="{{im.url}}">
+		{% endthumbnail %}
+		<li>Cod: {{elemento.codigo}}</li>
+		<li>Marca: {{elemento.marca}}</strong></li>
+		<li>Stock: {{elemento.stock}}</li>
+		<li>Genero: {{elemento.genero}}</li>
+		<li>Precio: ${{elemento.precio}}</strong></li>
+		<li>Descripcion: {{elemento.descripcion}}</li>
 	</ul>
+	</div>
+	<br>
 	{% endfor %}
   </body>
 </html>
+

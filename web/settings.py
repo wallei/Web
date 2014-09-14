@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'commerce',
+    'sorl.thumbnail',#importo para los thumbs!
 )
 
 MIDDLEWARE_CLASSES = (

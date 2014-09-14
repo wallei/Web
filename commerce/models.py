@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 #from django.contrib.auth.models import User
-from thumbs import ImageWithThumbsField #Importo para redimensionar las imagenes
+from sorl.thumbnail import ImageField #BAJAR LA VERSION pip install sorl-thumbnail==11.12.1b SINO NO ANDA!
 
 
 
@@ -42,7 +42,7 @@ class producto(models.Model):
     precio = models.DecimalField(max_digits=9, decimal_places = 2)
     activo = models.BooleanField(default=False)
     descripcion = models.TextField()
-    imagen = ImageWithThumbsField(upload_to='foto_producto', sizes=((200,200),(125,125)))#Carga la imagen, guarda la original mas las dos redimensionadas
+    imagen = ImageField(upload_to='foto_producto')#Carga la imagen con sorl
     slug = models.SlugField(max_length = 255, unique=True, help_text= 'Direccion unica de url.')
     class Meta:
         ordering = ['nombre_producto']
