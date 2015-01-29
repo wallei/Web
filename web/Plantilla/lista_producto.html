@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+	<title>Lista de Productos</title>
+	<meta charset='utf-8'>
+  </head>
+  <body>
+    <h1 align="center">Lista de Productos</h1>
+	<br>
+	<br>
+	<br>
+	{% for elemento in lista %}
+	<ul>
+	  <div border: 1px solid black>
+	  <H2><strong>{{elemento.nombre_producto}}</strong></H2>
+	  <h3>Categoria:  {{elemento.subcategoria}}</h3>
+		{% load thumbnail %}
+		{% thumbnail elemento.imagen "200" crop="200px 200px" format="PNG" as im%}
+			<img src="{{im.url}}">
+		{% endthumbnail %}
+		<li>Cod: {{elemento.codigo}}</li>
+		<li>Marca: {{elemento.marca}}</strong></li>
+		<li>Stock: {{elemento.stock}}</li>
+		<li>Genero: {{elemento.genero}}</li>
+		<li>Precio: ${{elemento.precio}}</strong></li>
+		<li>Descripcion: {{elemento.descripcion}}</li>
+	</ul>
+	</div>
+	<br>
+	{% endfor %}
+  </body>
+</html>
+

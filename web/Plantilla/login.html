@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" media="screen" type="text/css" /> 
+        <title> Login web </title>
+    </head>
+    <body>
+        <span href="#" class="button" id="toggle-login">Log in</span>
+        <div id="login">
+        <div id="triangle"></div>
+            <h1>Log in</h1>
+            <form id="loginForm" action="/login/" method="POST">
+                {% csrf_token %}
+                {% if msg %}
+                    <div class="error">
+                        <span><b>{{ msg }}</b></span>
+                    </div>
+                    <br>
+                {% endif %}
+                <table>
+                    <tr>
+                        <td>
+                            <input type="usuario" placeholder="Usuario" name="username"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" placeholder="Password" name="password"/>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Enviar"/>
+            </form>
+        </div>
+        <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+        <script src='{{STATIC_URL}}js/index.js'></script>
+    </body>
+    
+</html>
